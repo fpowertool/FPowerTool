@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<title>TreeGrid with Footer - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="easyui.css">
+	<link rel="stylesheet" type="text/css" href="icon.css">
+	<link rel="stylesheet" type="text/css" href="demo.css">
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.easyui.min.js"></script>
+<script>	function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+</script>
+</head>
+<body>
+	<h2>TreeGrid with Footer</h2>
+	<p>Show summary information on TreeGrid footer.</p>
+	<div style="margin:20px 0;">
+		<form action="perftreegrid.html" method="get">
+    <div>
+         <label for="search"></label></p>
+<input name="file" id="file" value="" size="50">
+<script>
+    var url_string = window.location.href; //window.location.href
+    var url = new URL(url_string);
+    var c = url.searchParams.get("file");
+    document.getElementById("file").value = c;
+</script>   
+         <button>open</button>
+    </div>
+</form></p>
+
+	</div>
+	<div style="margin:20px 0;"></div>
+	
+	<table id="tg"></table>
+	<script type="text/javascript">
+		$(function(){
+			$('#tg').treegrid({
+				title:'Functions Perf Info.',
+				iconCls:'icon-ok',
+				width:1500,
+				height:850,
+				rownumbers: false,
+				animate:false,
+				collapsible:false,
+				fitColumns:true,
+				url:getQueryVariable('file'),
+				method: 'get',
+				idField:'id',
+				treeField:'name',
+				showFooter:true,
+				columns:[[
+	                {title:'Fn Name',field:'name',width:100},
+{field:'branch_instructions',title:'branch_instructions',width:61},{field:'branch_misses',title:'branch_misses',width:61},{field:'bus_cycles',title:'bus_cycles',width:61},{field:'cache_misses',title:'cache_misses',width:61},{field:'cache_references',title:'cache_references',width:61},{field:'cpu_cycles',title:'cpu_cycles',width:61},{field:'instructions',title:'instructions',width:61},{field:'ref_cpu_cycles',title:'ref_cpu_cycles',width:61},{field:'context_switches',title:'context_switches',width:61},{field:'cpu_clock',title:'cpu_clock',width:61},{field:'emulation_faults',title:'emulation_faults',width:61},{field:'page_faults',title:'page_faults',width:61},{field:'page_faults_maj',title:'page_faults_maj',width:61},{field:'page_faults_min',title:'page_faults_min',width:61},{field:'task_clock',title:'task_clock',width:61}
+					]]
+			});
+		})
+		$('.datagrid-cell').css('font-size','66px');
+	</script>
+
+
+</body>
+</html>

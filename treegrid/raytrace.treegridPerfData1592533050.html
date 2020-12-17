@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<title>TreeGrid with Footer - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="easyui.css">
+	<link rel="stylesheet" type="text/css" href="icon.css">
+	<link rel="stylesheet" type="text/css" href="demo.css">
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.easyui.min.js"></script>
+<script>	function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+</script>
+</head>
+<body>
+	<h2>TreeGrid with Footer</h2>
+	<p>Show summary information on TreeGrid footer.</p>
+	<div style="margin:20px 0;">
+		<form action="" method="get">
+    <div>
+         <label for="search">¿¿¿¿¿¿?</label>
+         <input name="file" id="search" value="¿">
+    </div>
+    <div>
+         <button>¿¿¿¿</button>
+    </div>
+</form>`</p>probe perf.hw.branch_instructions.$1.counter("bi") { }
+	</div>
+	<div style="margin:20px 0;"></div>
+	
+	<table id="tg"></table>
+	<script type="text/javascript">
+		$(function(){
+			$('#tg').treegrid({
+				title:'Functions Perf Info.',
+				iconCls:'icon-ok',
+				width:1500,
+				height:850,
+				rownumbers: false,
+				animate:false,
+				collapsible:false,
+				fitColumns:true,
+				url:getQueryVariable('file'),
+				method: 'get',
+				idField:'id',
+				treeField:'name',
+				showFooter:true,
+				columns:[[
+	                {title:'Fn Name',field:'name',width:100},
+					{field:'bi',title:'bi',width:61},
+					{field:'bm',title:'bm',width:61},
+					{field:'cm',title:'cm',width:63},
+					{field:'cr',title:'cr',width:63},
+					{field:'ins',title:'ins',width:61},
+					{field:'cc',title:'cc',width:61},
+					{field:'rcc',title:'rcc',width:63},
+					{field:'csw',title:'csw',width:63},
+					{field:'ccl',title:'ccl',width:61},
+					{field:'pfa',title:'pfa',width:61},
+					{field:'tcl',title:'tcl',width:63}
+					]]
+			});
+		})
+		$('.datagrid-cell').css('font-size','66px');
+	</script>
+
+
+#@perf("bi"), @perf("bm"), @perf("cm"), @perf("cr"), @perf("ins"), @perf("cc"), @perf("rcc") , @perf("csw") ,  @perf("ccl") ,@perf("pfa") ,  @perf("tcl") 
+
+</p>probe perf.hw.branch_instructions
+</p>    .$1
+</p>    .counter("bi") { }
+</p>probe perf.hw.branch_misses.$1.counter("bm") { }
+</p>
+</p>probe perf.hw.cache_misses.$1.counter("cm") { }
+</p>probe perf.hw.cache_references.$1.counter("cr") { }
+</p>
+</p>probe perf.hw.instructions.$1.counter("ins") { }
+</p>#Èý¸ö»ù±¾³ÉÕý±È
+</p>probe perf.hw.cpu_cycles.$1.counter("cc") { }
+</p>probe perf.hw.ref_cpu_cycles.$1.counter("rcc") { }
+</p>#probe perf.hw.bus_cycles.$1.counter("mybus") { }  #saw: identifier 
+</p>
+</p>#probe perf.hw.stalled_cycles_backend.$1.counter("scb") { }
+</p>#probe perf.hw.stalled_cycles_frontend.$1.counter("scf") { }
+</p>
+</p>#alignment_faults¼ÆÊýÎª0
+</p>#probe perf.sw.alignment_faults.$1.counter("aligf") { } #saw: identifier 
+</p>
+</p>
+</p>probe perf.sw.context_switches.$1.counter("csw") { }
+</p>probe perf.sw.cpu_clock.$1.counter("ccl") { }
+</p>
+</p>#cpu_migrationsÔÚnpbÀïµÄÕâ¸öÊÇ0
+</p>#probe perf.sw.cpu_migrations.$1.counter("cmi") { }
+</p>
+</p>
+</p>#probe perf.sw.emulation_faults.$1.counter("efa") { }
+</p>probe perf.sw.page_faults.$1.counter("pfa") { }
+</p>#probe perf.sw.page_faults_maj.$1.counter("pfm") { }
+</p>#probe perf.sw.page_faults_min.$1.counter("pfm2") { }
+</p>probe perf.sw.task_clock.$1.counter("tcl") { }
+</body>
+</html>

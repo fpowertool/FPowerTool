@@ -1,0 +1,18 @@
+#! /usr/bin/env stap
+probe perf.hw.branch_instructions.$1.counter("branch_instructions"){} 
+probe perf.hw.branch_misses.$1.counter("branch_misses"){} 
+probe perf.hw.bus_cycles.$1.counter("bus_cycles"){} 
+probe perf.hw.cache_misses.$1.counter("cache_misses"){} 
+probe perf.hw.cache_references.$1.counter("cache_references"){} 
+probe perf.hw.cpu_cycles.$1.counter("cpu_cycles"){} 
+probe perf.hw.instructions.$1.counter("instructions"){} 
+probe perf.hw.ref_cpu_cycles.$1.counter("ref_cpu_cycles"){} 
+probe perf.sw.context_switches.$1.counter("context_switches"){} 
+probe perf.sw.cpu_clock.$1.counter("cpu_clock"){} 
+probe perf.sw.emulation_faults.$1.counter("emulation_faults"){} 
+probe perf.sw.page_faults.$1.counter("page_faults"){} 
+probe perf.sw.page_faults_maj.$1.counter("page_faults_maj"){} 
+probe perf.sw.page_faults_min.$1.counter("page_faults_min"){} 
+probe perf.sw.task_clock.$1.counter("task_clock"){} 
+
+		

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<title>TreeGrid with Footer - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="easyui.css">
+	<link rel="stylesheet" type="text/css" href="icon.css">
+	<link rel="stylesheet" type="text/css" href="demo.css">
+
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.easyui.min.js"></script>
+<script>	function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+</script>
+</head>
+<body>
+	<h2>TreeGrid with Footer</h2>
+	<p>Show summary information on TreeGrid footer.</p>
+	<div style="margin:20px 0;">
+	
+	<form action="energytreegrid.html" method="get">
+    <div>
+         <label for="search"></label>
+<input name="file" id="file" value="" size="50">
+<script>
+    var url_string = window.location.href; //window.location.href
+    var url = new URL(url_string);
+    var c = url.searchParams.get("file");
+    document.getElementById("file").value = c;
+</script>         
+<button>open</button>
+    </div>
+</form></p>
+	
+	</div>
+	<table id="tg"></table>
+	<script type="text/javascript">
+		$(function(){
+			$('#tg').treegrid({
+				title:'Functions Energy Info(1e-09Joule).',
+				iconCls:'icon-ok',
+				width:650,
+				height:750,
+				rownumbers: false,
+				animate:true,
+				collapsible:false,
+				fitColumns:true,
+				url:getQueryVariable('file'),
+				method: 'get',
+				idField:'id',
+				treeField:'name',
+				showFooter:true,
+				columns:[[
+	                {title:'Fn Name',field:'name',width:100},
+					{field:'p0',title:'Domain pkg0',width:61},
+					{field:'p1',title:'Domain pkg1',width:61},
+					{field:'d0',title:'Domain dram0',width:63},
+					{field:'d1',title:'Domain dram1',width:63}
+
+				]]
+			});
+		})
+	</script>
+</body>
+</html>

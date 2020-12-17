@@ -1,0 +1,11 @@
+perf.hw.branch_instructions branch_instructions
+perf.hw.branch_misses branch_misses
+perf.hw.bus_cycles bus_cycles
+perf.hw.cache_misses cache_misses
+perf.hw.cache_references cache_references
+perf.hw.cpu_cycles cpu_cycles
+perf.hw.instructions instructions
+perf.hw.ref_cpu_cycles ref_cpu_cycles
+perf.sw.cpu_clock cpu_clock
+perf.sw.page_faults_min page_faults_min
+perf.sw.task_clock task_clock

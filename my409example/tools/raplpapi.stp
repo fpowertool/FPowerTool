@@ -1,0 +1,8 @@
+#! /usr/bin/env stap
+
+
+probe process("/home/gwei/rapl4stap/raplpapi").function("stap4rapl").call{
+	printf("%ld %s\n",
+         gettimeofday_us(),
+         $$parms$$)
+}

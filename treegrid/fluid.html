@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fluid TreeGrid - Functions Power Info. Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Functions Power Info.</h2>
+	<p>This example shows the power informations of functions in TreeGrid.</p>
+	<div style="margin:20px 0;"></div>
+	<table title="Functions Power Info." class="easyui-treegrid" style="width:100%;height:680px"
+			data-options="
+				url: 'bt2.json',
+				method: 'get',
+				idField: 'id',
+				treeField: 'name'
+			">
+		<thead>
+			<tr>
+				<th data-options="field:'name'" width="30%">Functions</th>
+				<th data-options="field:'p0'" width="15%" >cpu0</th>
+				<th data-options="field:'p1'" width="15%">cpu1</th>
+				<th data-options="field:'d0'" width="15%">dram0</th>
+				<th data-options="field:'d1'" width="15%">dram1</th>
+			</tr>
+		</thead>
+	</table>
+
+</body>
+</html>

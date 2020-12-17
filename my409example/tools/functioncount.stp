@@ -1,0 +1,13 @@
+#! /usr/bin/env stap
+
+probe $1.call {  # probe functions listed on commandline
+  called[ppfunc()] <<< 1  # add a count efficiently
+}
+
+global called
+
+probe end {
+  foreach (fn in called-)  # Sort by call count (in decreasing order)
+    printf("%s %d\n", fn, @count(called[fn]))
+  exit()
+}

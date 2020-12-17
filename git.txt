@@ -1,0 +1,14 @@
+git clone root@115.25.138.206:~/fpowertool.git
+
+
+ 1071  git status
+ 1072  git add *
+ 1073  git status
+ 1074  git commit -m '1'
+ 1075  git push origin master
+
+
+
+git fetch origin master
+git reset --hard FETCH_HEAD
+git clean -df

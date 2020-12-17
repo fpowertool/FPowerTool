@@ -1,0 +1,26 @@
+#! /usr/bin/env stap
+function trace(entry_p) {
+  printf("%ld %d %s
+",gettimeofday_us(),entry_p,ppfunc ()   )
+}
+probe $1.statement("*@*cg.f:10" ){  
+  printf("%ld 1 f10t467\n",gettimeofday_us() ) 
+} 
+probe $1.statement("*@*cg.f:467" ){  
+  printf("%ld 1 f10t467\n",gettimeofday_us() ) 
+} 
+
+probe $1.statement("*@*cg.f:467" ){  
+  printf("%ld 1 f467t704\n",gettimeofday_us() ) 
+} 
+probe $1.statement("*@*cg.f:704" ){  
+  printf("%ld 1 f467t704\n",gettimeofday_us() ) 
+} 
+
+probe $1.statement("*@*cg.f:704" ){  
+  printf("%ld 1 f704t1030\n",gettimeofday_us() ) 
+} 
+probe $1.statement("*@*cg.f:1030" ){  
+  printf("%ld 1 f704t1030\n",gettimeofday_us() ) 
+} 
+
